@@ -1,0 +1,26 @@
+﻿@using Microsoft.AspNetCore.Cors
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="text-center">
+
+            <form id="nationalCodeValidator" asp-controller="Home" , asp-action="CheckInfo" method="post">
+                <div class="form-group">
+                    <label for="Ncode">کد ملی:</label>
+                    <input type="text" name="Ncode" class="form-control" id="Ncode" maxlength="10" minlenght="10"  required>
+                </div>
+
+                <div class="form-group mt-2">
+                    <label for="mobile">تلفن همراه:</label>
+                    <input type="text" name="mobile" class="form-control" id="mobile" maxlength="11" minlenght="11" pattern="[0]{1}[0-9]{10}" required>
+                </div>
+
+                <button type="submit" class="btn btn-primary mt-2" id="submitData">ثبت</button>
+            </form>
+        </div>
+    </div>
+</div>
